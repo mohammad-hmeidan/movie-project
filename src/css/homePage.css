@@ -1,0 +1,91 @@
+.landing {
+  background-image: -webkit-image-set(url(https://media.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter\(duotone,00192f,00baff\)/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg)1x,url(https://media.themoviedb.org/t/p/w3840_and_h1200_multi_faces_filter\(duotone,00192f,00baff\)/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg)2x);
+  background-image: image-set(url(https://media.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter\(duotone,00192f,00baff\)/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg)1x,url(https://media.themoviedb.org/t/p/w3840_and_h1200_multi_faces_filter\(duotone,00192f,00baff\)/zZ3Cv1lz61V9OXXvtCPVtCFTVP7.jpg)2x);
+  background-size: cover;
+  padding: var(--padding-section) 30px !important;
+  color: white;
+}
+.landing h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+.landing p {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+.landing .search {
+  position: relative;
+}
+.landing .search input {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  outline: none;
+}
+.landing .search a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  padding: 0 20px;
+  color: white;
+  background: linear-gradient(
+    to right,
+    rgba(30, 213, 169, 1) 0%,
+    rgba(1, 180, 228, 1) 100%
+  );
+}
+.wrapper {
+  padding-top: var(--padding-section);
+  padding-bottom: var(--padding-section);
+}
+.wrapper .head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.wrapper .selector {
+  display: flex;
+  gap: 15px;
+  padding: 0 10px;
+  border: 1px solid var(--main-color);
+  border-radius: 30px;
+  position: relative;
+}
+.wrapper .selector div {
+  color: var(--main-color);
+  border-radius: inherit;
+  cursor: pointer;
+  transition: var(--main-transition);
+  z-index: 1;
+}
+.wrapper .selector div:first-of-type {
+  width: 35%;
+  margin-right: 5px;
+}
+.wrapper .selector div:nth-of-type(2) {
+  width: 65%;
+}
+.wrapper .selector div.active {
+  color: white;
+}
+.wrapper .selector .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(50% - 10px);
+  height: 100%;
+  background-color: var(--main-color);
+  z-index: -1;
+  transition: var(--main-transition);
+}
+.wrapper .selector .background.active {
+  width: calc(65% - 10px);
+  left: calc(35% + 10px);
+}

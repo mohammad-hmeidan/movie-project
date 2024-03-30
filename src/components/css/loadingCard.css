@@ -1,0 +1,30 @@
+.loading-card {
+  background-color: white !important;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: var(--main-shadow);
+}
+.loading-card .image {
+  width: 150px;
+  height: 225px;
+  background-color: var(--grey-color-loading);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.loading-card h3,
+.loading-card p {
+  width: 100%;
+  height: 15px;
+  border-radius: 10px;
+  background-color: var(--grey-color-loading);
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+.loading-card p {
+  height: 10px;
+}

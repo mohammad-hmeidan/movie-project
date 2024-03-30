@@ -1,0 +1,70 @@
+.movie-page {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .movie-page {
+    flex-direction: column;
+  }
+}
+.movie-page > div:first-of-type {
+  flex: 1;
+}
+.movie-page > div:last-of-type {
+  flex: 3;
+}
+.movie-page .container-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+.movie-page .according-item .date div {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.movie-page .according-item .date div input {
+  padding: 3px;
+  border: 1px solid var(--grey-color);
+  color: var(--grey-color);
+  transition: var(--main-transition);
+}
+.movie-page .according-item .date div input:focus {
+  outline: none;
+  border-color: var(--blue-color);
+}
+.movie-page .according-item .genres div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.movie-page .according-item .genres div button {
+  background-color: transparent;
+  border: 1px solid var(--grey-color);
+  border-radius: 15px;
+  padding: 5px;
+  color: var(--grey-color);
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.movie-page .according-item .genres div button:hover {
+  background-color: var(--blue-color);
+  color: white;
+  border-color: var(--blue-color);
+}
+.movie-page .search-controller {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.movie-page .search-controller .filter-item {
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+}

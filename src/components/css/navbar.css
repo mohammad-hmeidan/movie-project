@@ -1,0 +1,106 @@
+.navbar {
+  background-color: var(--main-color);
+}
+.navbar .container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.navbar .logo {
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 10px;
+}
+.navbar .logo a {
+  color: white;
+}
+.navbar .logo a img {
+  width: 150px;
+}
+
+.navbar .container .links {
+  position: relative;
+}
+.navbar .container .menu-bar {
+  display: none;
+}
+@media (max-width: 767px) {
+  .navbar .container .menu-bar {
+    display: block;
+    cursor: pointer;
+  }
+  .navbar .container .menu-bar:hover {
+    color: var(--blue-color);
+  }
+  .navbar .container .menu-bar i {
+    display: none;
+    font-size: 1.5rem;
+  }
+  .navbar .container .menu-bar i.active {
+    display: block;
+    -webkit-animation: rotate var(--main-transition);
+    animation: rotate var(--main-transition);
+  }
+  @-webkit-keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+.navbar .container ul {
+  display: flex;
+  gap: 35px;
+  cursor: pointer;
+  padding: 5px;
+}
+@media (max-width: 767px) {
+  .navbar .container ul {
+    position: absolute;
+    top: 30px;
+    right: -200px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    background-color: var(--main-color);
+    flex-direction: column;
+    gap: 0;
+    z-index: 100;
+    transition: var(--main-transition);
+  }
+  .navbar .container ul.active {
+    right: 0;
+  }
+  .navbar .container ul li {
+    padding: 10px;
+  }
+  .navbar .container ul li:not(:last-of-type) {
+    padding: 10px;
+    border-bottom: 1px solid white;
+  }
+  .navbar .container ul li:hover {
+    border-color: var(--hover-color);
+  }
+}
+.navbar .container ul li a {
+  color: white;
+  transition: var(--main-transition);
+}
+.navbar .container ul li:hover a {
+  color: var(--hover-color);
+}
+.navbar .container ul li a i {
+  margin-right: 8px;
+}

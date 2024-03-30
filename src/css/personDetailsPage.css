@@ -1,0 +1,74 @@
+.person {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+@media (max-width: 767px) {
+  .person {
+    flex-direction: column;
+    text-align: center;
+  }
+  .person img,
+  .person .image {
+    width: 200px !important;
+  }
+  .person .social-info {
+    justify-content: center;
+  }
+}
+/* .person img {
+  width: 300px;
+} */
+.person .social-info {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.person .social-info i {
+  color: black;
+  font-size: 1.3rem;
+  position: relative;
+}
+.person .social-info i.facebook:hover {
+  color: #1877f2;
+}
+.person .social-info i.twitter:hover {
+  color: #1da1f2;
+}
+.person .social-info i.instagram:hover {
+  color: #e1306c;
+}
+.person .personal-info h2 {
+  margin-bottom: 15px;
+}
+.person .personal-info h3 {
+  font-size: 1rem;
+}
+.person .personal-info p {
+  color: var(--grey-color);
+  margin-bottom: 5px;
+}
+.person > div:last-of-type {
+  width: 75%;
+  flex: 3;
+}
+@media (max-width: 767px) {
+  .person > div:last-of-type {
+    width: 100%;
+  }
+}
+.person .biography {
+  margin-top: 40px;
+  width: 100%;
+}
+.person .biography p {
+  line-height: 1.6;
+  color: var(--grey-color);
+  margin-top: 15px;
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+.person .wrapper {
+  width: 100%;
+}

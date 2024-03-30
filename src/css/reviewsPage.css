@@ -1,0 +1,27 @@
+.reviews-page-head {
+  background: linear-gradient(
+    to right,
+    rgba(157.5, 178.5, 199.5, 1) calc((50vw - 170px) - 340px),
+    rgba(157.5, 178.5, 199.5, 0.84) 50%,
+    rgba(157.5, 178.5, 199.5, 0.84) 100%
+  );
+  margin-bottom: 15px;
+  padding: 10px 0;
+}
+.reviews-page-head .container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.reviews-page-head img {
+  width: 60px;
+}
+.reviews-page-head .container div h2,
+.reviews-page-head a {
+  color: white;
+  cursor: pointer;
+}
+.reviews-page-head .container div:hover,
+.reviews-page-head a:hover {
+  color: var(--light-hover);
+}

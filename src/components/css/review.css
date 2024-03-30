@@ -1,0 +1,46 @@
+.review > h2 {
+  margin-bottom: 20px;
+}
+.review-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  box-shadow: var(--main-shadow);
+}
+.review-card .header-review-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.review-card > p {
+  white-space: pre-line;
+}
+.review-card .header-review-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.review-card .header-review-card div div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.review-card .header-review-card div div .rate {
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+.review div a {
+  display: block;
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 15px;
+  transition: var(--main-transition);
+}
+.review div a:hover {
+  color: var(--blue-color);
+}
