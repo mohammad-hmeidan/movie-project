@@ -81,7 +81,9 @@ function SearchPage() {
             <li>
               <Link
                 className={searchType === "multi" ? "active" : ""}
-                to={`/search/multi?query=${encodeURIComponent(searchQuery)}`}
+                to={`/movie-project/search/multi?query=${encodeURIComponent(
+                  searchQuery
+                )}`}
               >
                 Multi
               </Link>
@@ -89,7 +91,9 @@ function SearchPage() {
             <li>
               <Link
                 className={searchType === "movie" ? "active" : ""}
-                to={`/search/movie?query=${encodeURIComponent(searchQuery)}`}
+                to={`/movie-project/search/movie?query=${encodeURIComponent(
+                  searchQuery
+                )}`}
               >
                 Movie
               </Link>
@@ -97,7 +101,9 @@ function SearchPage() {
             <li>
               <Link
                 className={searchType === "tv" ? "active" : ""}
-                to={`/search/tv?query=${encodeURIComponent(searchQuery)}`}
+                to={`/movie-project/search/tv?query=${encodeURIComponent(
+                  searchQuery
+                )}`}
               >
                 TV Show
               </Link>
@@ -105,7 +111,9 @@ function SearchPage() {
             <li>
               <Link
                 className={searchType === "person" && "active"}
-                to={`/search/person?query=${encodeURIComponent(searchQuery)}`}
+                to={`/movie-project/search/person?query=${encodeURIComponent(
+                  searchQuery
+                )}`}
               >
                 People
               </Link>
@@ -118,7 +126,7 @@ function SearchPage() {
               data.results.map((item) => (
                 <Zoom key={Math.random() * item.id}>
                   <MainCard
-                    url={`/${
+                    url={`/movie-project/${
                       searchType !== "multi" ? searchType : item.media_type
                     }/${item.id}`}
                     circularActive={item.vote_average ? true : false}

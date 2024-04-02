@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Sort({ type, sortBy, setSortBy }) {
   let hidden = (e) => {

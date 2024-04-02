@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import LoadingCard from "../components/LoadingCard";
-import MainCard from "../components/MainCard";
 import Pagination from "../components/Pagination";
 import Zoom from "react-reveal/Zoom";
-import "../css/peoplePage.css";
 import PersonCard from "../components/PersonCard";
+
+import "../css/peoplePage.css";
 
 function PeoplePage() {
   const [data, setData] = useState([]);
@@ -41,7 +41,7 @@ function PeoplePage() {
           data.results.map((item) => (
             <Zoom key={item.id}>
               <PersonCard
-                url={`/person/${item.id}`}
+                url={`/movie-project/person/${item.id}`}
                 img={`https://image.tmdb.org/t/p/w200/${item.profile_path}`}
                 Name={item.original_name}
                 otherName={item.known_for.map(

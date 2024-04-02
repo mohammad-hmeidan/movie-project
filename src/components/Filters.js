@@ -13,10 +13,8 @@ function Filters({
   };
 
   // change language to new language
-  const [langNow, setLangNow] = useState("English");
   let changeLanguage = (lang, langName) => {
     setLanguage({ language: lang, originalLang: langName });
-    setLangNow(langName);
   };
   // change Date
   let changeDate = () => {
@@ -44,7 +42,7 @@ function Filters({
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
-  }, []);
+  }, [type]);
   // change genres
   let changegenres = (genresId, genresName) => {
     setGenres({ genresId: genresId, genresName: genresName });

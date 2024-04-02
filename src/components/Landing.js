@@ -14,7 +14,11 @@ const Landing = () => {
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="search for a movie,tv show,person..."
         />
-        <Link to={`/search/multi?query=${encodeURIComponent(searchQuery)}`}>
+        <Link
+          to={`/movie-project/search/multi?query=${encodeURIComponent(
+            searchQuery
+          )}`}
+        >
           search
         </Link>
       </div>

@@ -58,7 +58,7 @@ function Wrapper({
           <Zoom key={Math.random() * item.id}>
             <MainCard
               title={item.title || item.name}
-              url={`/${type}/${item.id}`}
+              url={`/movie-project/${type}/${item.id}`}
               img={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
               date={item.release_date || item.first_air_date}
               vote_average={Math.round(item.vote_average * 10)}
@@ -74,7 +74,7 @@ function Wrapper({
         <Zoom key={item.credit_id}>
           <MainCard
             title={item.title || item.name}
-            url={`/${item.media_type || "person"}/${item.id}`}
+            url={`/movie-project/${item.media_type || "person"}/${item.id}`}
             date={item.character}
             img={`https://image.tmdb.org/t/p/w200/${
               item.profile_path || item.poster_path

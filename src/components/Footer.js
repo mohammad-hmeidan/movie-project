@@ -12,17 +12,17 @@ function Footer() {
         </div>
         <div className="movies">
           <h3>
-            <Link to="/movie/popular">Movies</Link>
+            <Link to="/movie-project/movie/popular">Movies</Link>
           </h3>
         </div>
         <div className="tv-show">
           <h3>
-            <Link to="/tv/popular">TV Show</Link>
+            <Link to="/movie-project/tv/popular">TV Show</Link>
           </h3>
         </div>
         <div className="people">
           <h3>
-            <Link to="/people">People</Link>
+            <Link to="/movie-project/people">People</Link>
           </h3>
         </div>
       </div>

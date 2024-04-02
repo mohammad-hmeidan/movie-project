@@ -38,7 +38,7 @@ function ReviewsPage({ type }) {
           />
           <div>
             <h2>Poor Things (2023)</h2>
-            <Link to={`/${type}/${movieId}`}>← Back to main</Link>
+            <Link to={`/movie-project/${type}/${movieId}`}>← Back to main</Link>
           </div>
         </div>
       </div>

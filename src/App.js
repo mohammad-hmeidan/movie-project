@@ -16,28 +16,40 @@ import SearchPage from "./page/SearchPage";
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/movie-project/" element={<HomePage />} />
         <Route
-          path="/movie/popular"
+          path="/movie-project/movie/popular"
           element={<MoviePage type="movie" urlvar="popular" />}
         />
-        <Route path="/movie/:movieId" element={<MovieDetailsPage />} />
         <Route
-          path="/movie/:movieId/reviews"
+          path="/movie-project/movie/:movieId"
+          element={<MovieDetailsPage />}
+        />
+        <Route
+          path="/movie-project/movie/:movieId/reviews"
           element={<ReviewsPage type="movie" />}
         />
         <Route
-          path="/tv/popular"
+          path="/movie-project/tv/popular"
           element={<MoviePage type="tv" urlvar="popular" />}
         />
-        <Route path="/tv/:tvid" element={<TvDetailsPage />} />
-        <Route path="/tv/:tvid/reviews" element={<ReviewsPage type="tv" />} />
-        <Route path="/people" element={<PeoplePage />} />
-        <Route path="/person/:personId" element={<PersonDetailsPage />} />
-        <Route path="/search/:searchType" element={<SearchPage />} />
+        <Route path="/movie-project/tv/:tvid" element={<TvDetailsPage />} />
+        <Route
+          path="/movie-project/tv/:tvid/reviews"
+          element={<ReviewsPage type="tv" />}
+        />
+        <Route path="/movie-project/people" element={<PeoplePage />} />
+        <Route
+          path="/movie-project/person/:personId"
+          element={<PersonDetailsPage />}
+        />
+        <Route
+          path="/movie-project/search/:searchType"
+          element={<SearchPage />}
+        />
       </Routes>
       <Footer />
     </div>

@@ -22,7 +22,7 @@ function Review({ type, selectId }) {
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
-  }, [selectId]);
+  }, [selectId, type]);
   return (
     <div className="review container">
       <h2>Social Reviews</h2>
@@ -41,7 +41,9 @@ function Review({ type, selectId }) {
       </div>
       {data.total_results > 0 ? (
         <div>
-          <Link to={`/${type}/${selectId}/reviews`}>Read All Review </Link>
+          <Link to={`/movie-project/${type}/${selectId}/reviews`}>
+            Read All Review{" "}
+          </Link>
         </div>
       ) : (
         <div>there isn't results</div>

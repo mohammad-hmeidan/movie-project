@@ -33,13 +33,13 @@ function PersonDetailsPage() {
         />
         <div>
           <div className="social-info">
-            <Link to="/movie">
+            <Link to="/movie-project/movie">
               <i className="fa-brands fa-facebook facebook"></i>
             </Link>
-            <Link to="/movie">
+            <Link to="/movie-project/movie">
               <i className="fa-brands fa-twitter twitter"></i>
             </Link>
-            <Link to="/movie">
+            <Link to="/movie-project/movie">
               <i className="fa-brands fa-instagram instagram"></i>
             </Link>
           </div>

@@ -17,33 +17,33 @@ function Navbar() {
     <div className="navbar">
       <div className="container">
         <div className="logo">
-          <Link to="/">
+          <Link to="/movie-project/">
             <img src={logo} alt=".." />
           </Link>
         </div>
         <div className="links">
           <div className="menu-bar" onClick={() => toggleMenu()}>
             <i className="fa-solid fa-bars active"></i>
-            <i class="fa-solid fa-xmark"></i>
+            <i className="fa-solid fa-xmark"></i>
           </div>
           <ul id="toggle">
             <li>
-              <Link to="/movie/popular">
+              <Link to="/movie-project/movie/popular">
                 <i className="fa-solid fa-clapperboard"></i> Movies
               </Link>
             </li>
             <li>
-              <Link to="/tv/popular">
+              <Link to="/movie-project/tv/popular">
                 <i className="fa-solid fa-tv"></i> Tv shows
               </Link>
             </li>
             <li>
-              <Link to="/people">
+              <Link to="/movie-project/people">
                 <i className="fa-solid fa-person"></i> People
               </Link>
             </li>
             <li>
-              <Link to="/search/multi">
+              <Link to="/movie-project/search/multi">
                 <i className="fa-solid fa-magnifying-glass"></i>Search
               </Link>
             </li>

@@ -101,7 +101,9 @@ function MoviePage({ type, urlvar }) {
                 <MainCard
                   circularActive={true}
                   url={
-                    type === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`
+                    type === "movie"
+                      ? `/movie-project/movie/${item.id}`
+                      : `/movie-project/tv/${item.id}`
                   }
                   img={`https://image.tmdb.org/t/p/w200${item.poster_path}`}
                   title={item.title || item.name}
