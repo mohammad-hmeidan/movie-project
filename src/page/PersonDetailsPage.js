@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Wrapper from "../components/Wrapper";
 import "../css/personDetailsPage.css";
 
 function PersonDetailsPage() {
   const { personId } = useParams();
   const [data, setData] = useState([]);
+  const [dataLink, setDataLink] = useState({
+    instagram_id: "",
+    tiktok_id: "",
+    twitter_id: "",
+    facebook_id: "",
+  });
   useEffect(() => {
     const options = {
       method: "GET",
@@ -23,6 +29,14 @@ function PersonDetailsPage() {
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
+
+    fetch(
+      `https://api.themoviedb.org/3/person/${personId}/external_ids`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setDataLink(response))
+      .catch((err) => console.error(err));
   }, [personId]);
   return (
     <div className="person container">
@@ -33,15 +47,44 @@ function PersonDetailsPage() {
         />
         <div>
           <div className="social-info">
-            <Link to="/movie-project/movie">
-              <i className="fa-brands fa-facebook facebook"></i>
-            </Link>
-            <Link to="/movie-project/movie">
-              <i className="fa-brands fa-twitter twitter"></i>
-            </Link>
-            <Link to="/movie-project/movie">
-              <i className="fa-brands fa-instagram instagram"></i>
-            </Link>
+            {dataLink.facebook_id !== null &&
+              dataLink.facebook_id.length > 0 && (
+                <a
+                  href={`https://www.facebook.com/${dataLink.facebook_id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-facebook facebook"></i>
+                </a>
+              )}
+            {dataLink.instagram_id !== null &&
+              dataLink.instagram_id.length > 0 && (
+                <a
+                  href={`https://www.instgram.com/${dataLink.instagram_id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i className="fa-brands fa-instagram instagram"></i>
+                </a>
+              )}
+            {dataLink.twitter_id !== null && dataLink.twitter_id.length > 0 && (
+              <a
+                href={`https://www.twitter.com/${dataLink.twitter_id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-twitter twitter"></i>
+              </a>
+            )}
+            {dataLink.tiktok_id !== null && dataLink.tiktok_id.length > 0 && (
+              <a
+                href={`https://www.tiktok.com/${dataLink.tiktok_id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="fa-brands fa-tiktok"></i>
+              </a>
+            )}
           </div>
           <div className="personal-info">
             <h2>Personal Info</h2>

@@ -37,8 +37,9 @@
   color: white;
   background: linear-gradient(
     to right,
-    rgba(30, 213, 169, 1) 0%,
-    rgba(1, 180, 228, 1) 100%
+    var(--hover-color) 0%,
+    var(--hover-color) 60%,
+    var(--main-color) 100%
   );
 }
 .wrapper {

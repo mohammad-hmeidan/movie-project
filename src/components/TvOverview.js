@@ -18,6 +18,7 @@ function TvOverview({ getApi }) {
       .then((response) => setData(response))
       .catch((err) => console.error(err));
   }, [getApi]);
+
   return (
     <div
       className="TvOverview overview"
@@ -62,7 +63,11 @@ function TvOverview({ getApi }) {
             </div>
             <div>
               <h4>Original language</h4>
-              <p>{data.id > 0 && data.spoken_languages[0].name}</p>
+              <p>
+                {data.id > 0 &&
+                  data.spoken_languages.length > 0 &&
+                  data.spoken_languages[0].english_name}
+              </p>
             </div>
             <div>
               <h4>budget</h4>

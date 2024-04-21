@@ -42,7 +42,6 @@ function Wrapper({
       timeframe === "week" ? initialApi.replace("day", "week") : initialApi;
     setApiUrl(newApiUrl);
   };
-
   if (!data) {
     return (
       <div className="container-scroller container">
@@ -58,7 +57,7 @@ function Wrapper({
           <Zoom key={Math.random() * item.id}>
             <MainCard
               title={item.title || item.name}
-              url={`/movie-project/${type}/${item.id}`}
+              url={`/${type}/${item.id}`}
               img={`https://image.tmdb.org/t/p/w200/${item.poster_path}`}
               date={item.release_date || item.first_air_date}
               vote_average={Math.round(item.vote_average * 10)}
@@ -66,6 +65,8 @@ function Wrapper({
             />
           </Zoom>
         ))
+      ) : data.total_results === 0 ? (
+        <div style={{ fontSize: "1.2rem" }}>there are no Recommendation </div>
       ) : (
         <LoadingCard />
       )
@@ -74,7 +75,7 @@ function Wrapper({
         <Zoom key={item.credit_id}>
           <MainCard
             title={item.title || item.name}
-            url={`/movie-project/${item.media_type || "person"}/${item.id}`}
+            url={`/${item.media_type || "person"}/${item.id}`}
             date={item.character}
             img={`https://image.tmdb.org/t/p/w200/${
               item.profile_path || item.poster_path

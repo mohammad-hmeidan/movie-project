@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Review from "../components/Review";
-import TvOverview from "../components/TvOverview";
+import MovieOverview from "../components/MovieOverview";
 import Wrapper from "../components/Wrapper";
 
 function TvDetailsPage() {
@@ -15,12 +15,10 @@ function TvDetailsPage() {
       left: 0,
       behavior: "smooth",
     });
-    document.getElementsByClassName("container-scroller")[0].scroll(0, 0);
-    document.getElementsByClassName("container-scroller")[1].scroll(0, 0);
   }, [tvid]);
   return (
     <>
-      <TvOverview getApi={apiDeails} />
+      <MovieOverview getApi={apiDeails} />
       <Wrapper
         type="cast"
         title="Top Billed Cast"

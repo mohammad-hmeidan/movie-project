@@ -29,6 +29,8 @@ function MoviePage({ type, urlvar }) {
       left: 0,
       behavior: "smooth",
     });
+    document.getElementsByClassName("dropdown-menu")[0].classList.add("hidden");
+    document.getElementsByClassName("dropdown-menu")[1].classList.add("hidden");
     const options = {
       method: "GET",
       headers: {
@@ -101,9 +103,7 @@ function MoviePage({ type, urlvar }) {
                 <MainCard
                   circularActive={true}
                   url={
-                    type === "movie"
-                      ? `/movie-project/movie/${item.id}`
-                      : `/movie-project/tv/${item.id}`
+                    type === "movie" ? `/movie/${item.id}` : `/tv/${item.id}`
                   }
                   img={`https://image.tmdb.org/t/p/w200${item.poster_path}`}
                   title={item.title || item.name}

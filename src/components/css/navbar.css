@@ -18,6 +18,7 @@
 }
 .navbar .logo a img {
   width: 150px;
+  height: 40px;
 }
 
 .navbar .container .links {
@@ -32,7 +33,7 @@
     cursor: pointer;
   }
   .navbar .container .menu-bar:hover {
-    color: var(--blue-color);
+    color: var(--hover-color);
   }
   .navbar .container .menu-bar i {
     display: none;

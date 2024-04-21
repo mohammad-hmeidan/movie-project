@@ -13,43 +13,36 @@ import TvDetailsPage from "./page/TvDetailsPage";
 
 import "../src/app.css";
 import SearchPage from "./page/SearchPage";
+import NotFoundPage from "./page/NotFoundPage";
 
 function App() {
   return (
     <div className="main-container">
       <Navbar />
       <Routes>
-        <Route path="/movie-project/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/movie-project/movie/popular"
+          path="/movie/popular"
           element={<MoviePage type="movie" urlvar="popular" />}
         />
+        <Route path="/movie/:movieId" element={<MovieDetailsPage />} />
         <Route
-          path="/movie-project/movie/:movieId"
-          element={<MovieDetailsPage />}
-        />
-        <Route
-          path="/movie-project/movie/:movieId/reviews"
+          path="/movie/:reviewId/reviews"
           element={<ReviewsPage type="movie" />}
         />
         <Route
-          path="/movie-project/tv/popular"
+          path="/tv/popular"
           element={<MoviePage type="tv" urlvar="popular" />}
         />
-        <Route path="/movie-project/tv/:tvid" element={<TvDetailsPage />} />
+        <Route path="/tv/:tvid" element={<TvDetailsPage />} />
         <Route
-          path="/movie-project/tv/:tvid/reviews"
+          path="/tv/:reviewId/reviews"
           element={<ReviewsPage type="tv" />}
         />
-        <Route path="/movie-project/people" element={<PeoplePage />} />
-        <Route
-          path="/movie-project/person/:personId"
-          element={<PersonDetailsPage />}
-        />
-        <Route
-          path="/movie-project/search/:searchType"
-          element={<SearchPage />}
-        />
+        <Route path="/people" element={<PeoplePage />} />
+        <Route path="/person/:personId" element={<PersonDetailsPage />} />
+        <Route path="/search/:searchType" element={<SearchPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </div>

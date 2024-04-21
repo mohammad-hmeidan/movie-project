@@ -3,7 +3,7 @@ import CircularProgress from "./CircularProgress";
 import "./css/overview.css";
 
 function MovieOverview({ getApi }) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({ episode_run_time: [] });
   useEffect(() => {
     const options = {
       method: "GET",
@@ -36,11 +36,11 @@ function MovieOverview({ getApi }) {
           />
         </div>
         <div className="details">
-          <h2 className="title">{data.title}</h2>
+          <h2 className="title">{data.title || data.name}</h2>
           <div className="date">
             {data.release_date} .{" "}
             {data.id > 0 && data.genres.map((item) => item.name + " ")} .{" "}
-            {editDate(data.runtime)}
+            {editDate(data.runtime || data.episode_run_time[0])}
           </div>
           <div>
             <div className="rate">
@@ -68,7 +68,7 @@ function MovieOverview({ getApi }) {
               <p>
                 {data.id > 0 &&
                   data.spoken_languages.length > 0 &&
-                  data.spoken_languages[0].name}
+                  data.spoken_languages[0].english_name}
               </p>
             </div>
             <div>

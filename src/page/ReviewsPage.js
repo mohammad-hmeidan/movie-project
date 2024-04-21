@@ -8,8 +8,9 @@ import Zoom from "react-reveal/Zoom";
 import "../css/reviewsPage.css";
 
 function ReviewsPage({ type }) {
-  const { movieId } = useParams();
+  const { reviewId } = useParams();
   const [data, setData] = useState({});
+  const [moreData, setMoreData] = useState({});
   useEffect(() => {
     const options = {
       method: "GET",
@@ -20,25 +21,32 @@ function ReviewsPage({ type }) {
       },
     };
     fetch(
-      `https://api.themoviedb.org/3/${type}/${movieId}/reviews?language=en-US&page=1`,
+      `https://api.themoviedb.org/3/${type}/${reviewId}/reviews?language=en-US&page=1`,
       options
     )
       .then((response) => response.json())
       .then((response) => setData(response))
       .catch((err) => console.error(err));
-  }, [movieId]);
-
+    // fetch data for add name and image
+    fetch(
+      `https://api.themoviedb.org/3/${type}/${reviewId}?language=en-US`,
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => setMoreData(response))
+      .catch((err) => console.error(err));
+  }, [reviewId]);
   return (
     <div>
       <div className="reviews-page-head">
         <div className="container">
           <img
-            src="https://media.themoviedb.org/t/p/w300_and_h450_bestv2/kCGlIMHnOm8JPXq3rXM6c5wMxcT.jpg"
+            src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2${moreData.backdrop_path}`}
             alt="..."
           />
           <div>
-            <h2>Poor Things (2023)</h2>
-            <Link to={`/movie-project/${type}/${movieId}`}>← Back to main</Link>
+            <h2>{moreData.title || moreData.name}</h2>
+            <Link to={`/${type}/${reviewId}`}>← Back to main</Link>
           </div>
         </div>
       </div>

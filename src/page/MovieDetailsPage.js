@@ -6,7 +6,7 @@ import Wrapper from "../components/Wrapper";
 
 function MovieDetailsPage() {
   const { movieId } = useParams(),
-    apiDeails = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
+    apiDetails = `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`,
     apiCast = `https://api.themoviedb.org/3/movie/${movieId}/credits?language=en-US`,
     apiRecom = `https://api.themoviedb.org/3/movie/${movieId}/recommendations?language=en-US&page=1`;
   useEffect(() => {
@@ -18,7 +18,7 @@ function MovieDetailsPage() {
   }, [movieId]);
   return (
     <>
-      <MovieOverview getApi={apiDeails} />
+      <MovieOverview getApi={apiDetails} />
       <Wrapper
         type="cast"
         title="Top Billed Cast"

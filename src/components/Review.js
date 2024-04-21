@@ -35,19 +35,17 @@ function Review({ type, selectId }) {
             content={data.results[0].content}
             img={data.results[0].author_details.avatar_path}
           />
-        ) : (
+        ) : data.total_results === 0 ? null : (
           <LoadingReiew count={1} />
         )}
       </div>
       {data.total_results > 0 ? (
         <div>
-          <Link to={`/movie-project/${type}/${selectId}/reviews`}>
-            Read All Review{" "}
-          </Link>
+          <Link to={`/${type}/${selectId}/reviews`}>Read All Review </Link>
         </div>
-      ) : (
-        <div>there isn't results</div>
-      )}
+      ) : data.total_results === 0 ? (
+        <div style={{ fontSize: "1.2rem" }}>there isn't results</div>
+      ) : null}
     </div>
   );
 }

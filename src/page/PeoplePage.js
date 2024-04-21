@@ -41,7 +41,7 @@ function PeoplePage() {
           data.results.map((item) => (
             <Zoom key={item.id}>
               <PersonCard
-                url={`/movie-project/person/${item.id}`}
+                url={`/person/${item.id}`}
                 img={`https://image.tmdb.org/t/p/w200/${item.profile_path}`}
                 Name={item.original_name}
                 otherName={item.known_for.map(

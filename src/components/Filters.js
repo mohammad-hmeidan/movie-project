@@ -99,7 +99,7 @@ function Filters({
             <p>To</p>
             <input type="date" id="release_date_lte" />
           </div>
-          <button onClick={() => changeDate()}>ِAplky Date</button>
+          <button onClick={() => changeDate()}>Apply Date Filter</button>
         </div>
         <div className="genres">
           <p>genres</p>

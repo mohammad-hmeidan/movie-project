@@ -1,0 +1,52 @@
+.main-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.not-found-page {
+  flex: 1;
+  text-align: center;
+}
+.not-found-page h1 {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+.not-found-page p {
+  max-width: 70%;
+  margin: auto;
+  color: var(--main-color);
+  font-size: 1.1rem;
+}
+.not-found-page .container div {
+  font-size: 7rem;
+  font-weight: bold;
+  color: var(--main-color);
+  text-shadow: 2px 2px 1px var(--grey-color);
+}
+
+.not-found-page a {
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: white;
+  background-color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: var(--main-transition);
+}
+.not-found-page a:hover {
+  color: var(--hover-color);
+}
+.not-found-page a:hover i {
+  -webkit-animation: to-left var(--main-transition) infinite alternate;
+  animation: to-left var(--main-transition) infinite alternate;
+}
+@-webkit-keyframes to-left {
+  100% {
+    transform: translateX(-5px);
+  }
+}
+@keyframes to-left {
+  100% {
+    transform: translateX(-5px);
+  }
+}

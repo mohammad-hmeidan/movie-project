@@ -42,5 +42,5 @@
   transition: var(--main-transition);
 }
 .review div a:hover {
-  color: var(--blue-color);
+  color: var(--hover-color);
 }

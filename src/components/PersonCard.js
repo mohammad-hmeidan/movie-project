@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+import ReactStars from "react-rating-stars-component";
 import loadingImage from "../images/loading-image.gif";
 import errorImage from "../images/error-image.jpg";
 
@@ -35,13 +36,14 @@ function PersonCard({ url, img, Name, otherName, gender }) {
         />
         <h3>{Name}</h3>
         <span className="title">{gender}</span>
-        <div className="rate">
-          <i className="filled fas fa-star"></i>
-          <i className="filled fas fa-star"></i>
-          <i className="filled fas fa-star"></i>
-          <i className="filled fas fa-star"></i>
-          <i className="far fa-star"></i>
-        </div>
+        <ReactStars
+          count={6}
+          value={Math.random() * 6}
+          size={30}
+          isHalf={true}
+          edit={false}
+          activeColor="#ffd700"
+        />
         <p>{otherName}</p>
       </div>
     </Link>

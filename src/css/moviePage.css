@@ -32,7 +32,22 @@
 }
 .movie-page .according-item .date div input:focus {
   outline: none;
-  border-color: var(--blue-color);
+  border-color: var(--hover-color);
+}
+.movie-page .according-item .date button {
+  display: block;
+  margin-left: auto;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.movie-page .according-item .date button:hover {
+  background-color: var(--hover-color);
 }
 .movie-page .according-item .genres div {
   display: flex;
@@ -50,9 +65,9 @@
   transition: var(--main-transition);
 }
 .movie-page .according-item .genres div button:hover {
-  background-color: var(--blue-color);
+  background-color: var(--hover-color);
   color: white;
-  border-color: var(--blue-color);
+  border-color: var(--hover-color);
 }
 .movie-page .search-controller {
   display: flex;

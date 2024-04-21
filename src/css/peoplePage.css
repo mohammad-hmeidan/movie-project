@@ -45,7 +45,7 @@
   top: -3px;
   left: 0%;
   height: 3px;
-  background-color: var(--blue-color);
+  background-color: var(--hover-color);
   width: 0;
   transition: var(--main-transition);
 }
@@ -68,7 +68,7 @@
   -webkit-filter: grayscale(0);
   filter: grayscale(0);
   border-radius: 10px;
-  border: 3px solid var(--blue-color);
+  border: 3px solid var(--hover-color);
 }
 .people-page .people-container .box h3 {
   margin: 0 0 10px;

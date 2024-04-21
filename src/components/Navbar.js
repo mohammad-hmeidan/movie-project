@@ -17,7 +17,7 @@ function Navbar() {
     <div className="navbar">
       <div className="container">
         <div className="logo">
-          <Link to="/movie-project/">
+          <Link to="/">
             <img src={logo} alt=".." />
           </Link>
         </div>
@@ -28,22 +28,22 @@ function Navbar() {
           </div>
           <ul id="toggle">
             <li>
-              <Link to="/movie-project/movie/popular">
+              <Link to="/movie/popular" onClick={() => toggleMenu()}>
                 <i className="fa-solid fa-clapperboard"></i> Movies
               </Link>
             </li>
             <li>
-              <Link to="/movie-project/tv/popular">
+              <Link to="/tv/popular" onClick={() => toggleMenu()}>
                 <i className="fa-solid fa-tv"></i> Tv shows
               </Link>
             </li>
             <li>
-              <Link to="/movie-project/people">
+              <Link to="/people" onClick={() => toggleMenu()}>
                 <i className="fa-solid fa-person"></i> People
               </Link>
             </li>
             <li>
-              <Link to="/movie-project/search/multi">
+              <Link to="/search/multi" onClick={() => toggleMenu()}>
                 <i className="fa-solid fa-magnifying-glass"></i>Search
               </Link>
             </li>
